@@ -15,7 +15,15 @@ Code must be writted in Javascript language. The code will be tested with Node8,
 ```
 Answer:
 ```
--- insert your answer here
+function sprint(arr,command,index) {
+    let ans = []
+    let arrsize = arr.length
+    let pointer = command.toLowerCase() === 'right' ? arrsize-index : index
+    for(let i = 0; i< arrsize;i++ ){
+        ans.push(arr[(pointer++)%arrsize])
+    }
+    return ans
+}
 ```
 2. Download [hero.json](https://github.com/takemetour/job-quest-intern-2018/blob/master/hero.json) and write a code to caculate these values from **hero.json**
 - 2.1 Average **networth** of all heroes
@@ -25,7 +33,33 @@ Answer:
 
 Answer:
 ```
--- insert your answer here
+var json = require('./hero.json')
+function calAllFunction(json) {
+    let averagenetworth = 0; let averageintlevel = 0;
+    let countlevelint = 0; let mostassist = "";
+    let countassist = 0; let kdratio = Infinity;
+    let worstkdradio = "";
+    for(let i = 0 ; i< json.length ; i++){
+        if(json[i].kill / json[i].death <= kdratio ){
+            worstkdradio = json[i].name
+            kdratio = json[i].kill / json[i].death 
+        }
+        if(json[i].assist >= countassist ){
+            mostassist = json[i].name
+            countassist = json[i].assist 
+        }
+        countlevelint += json[i].primary_attribute === "intelligent" ? 1 : 0
+        averagenetworth += json[i].networth
+        averageintlevel += json[i].primary_attribute === "intelligent" ? json[i].level : 0
+    }
+    averagenetworth /= json.length
+    averageintlevel /= countlevelint
+    console.log('Average networth of all heroes : ' + averagenetworth)
+    console.log('Average level for hero INT : ' + averageintlevel)
+    console.log('Most assist : ' + mostassist)
+    console.log('kill/death ratio : ' + mostassist)
+}
+calAllFunction(json)
 ```
 
 ## Simple Web Application: A joke from Chuck Norris.
@@ -48,16 +82,16 @@ This part of quest will be a challenging one. You are going to make a simple web
 ## Questions
 Q1: What is GraphQL and how it is different from REST API?
 
-A1: <insert your answer here>
+A1: <GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools. What make GraphQL different from REST API is that the endpoint you call is the identity of that object in REST API but GraphQL has the identity that is separate from how we fetch it. In REST, the shape and size of the resource is determined by the server. In GraphQL, the server declares what resources are available, and the client asks for what it needs at the time.>
 
 
 Q2: Please explain how javascript benefits from cross-platform development
 
-A2: <insert your answer here>
+A2: <We can write one application and run it on several platforms. Instead of having several applications in various languages, we are able to save a lot of code and expense. The lesser code and languages that we use result for the fewer bugs, distribution and maintenance effort.>
 
 Q3: What do you expect to get from during an internship at TakeMeTour?
 
-A3: <insert your answer here>
+A3: <Learn everything about web development and get an experience in the internship at TakeMeTour.>
 
 ## Submitting
 
