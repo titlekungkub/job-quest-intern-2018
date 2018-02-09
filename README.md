@@ -91,7 +91,7 @@ A2: <We can write one application and run it on several platforms. Instead of ha
 
 Q3: What do you expect to get from during an internship at TakeMeTour?
 
-A3: <Learn everything about web development and get an experience in the internship at TakeMeTour.>
+A3: < Learn everything about web development and get an experience in the internship at TakeMeTour. >
 
 ## Submitting
 
