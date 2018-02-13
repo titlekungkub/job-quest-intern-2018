@@ -15,7 +15,7 @@ Code must be writted in Javascript language. The code will be tested with Node8,
 ```
 Answer:
 ```
-function sprint(arr,command,index) {
+function shift(arr,command,index) {
     let ans = []
     let arrsize = arr.length
     let pointer = command.toLowerCase() === 'right' ? arrsize-index : index
