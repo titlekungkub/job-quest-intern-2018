@@ -57,7 +57,7 @@ function calAllFunction(json) {
     console.log('Average networth of all heroes : ' + averagenetworth)
     console.log('Average level for hero INT : ' + averageintlevel)
     console.log('Most assist : ' + mostassist)
-    console.log('kill/death ratio : ' + mostassist)
+    console.log('kill/death ratio : ' +  worstkdradio)
 }
 calAllFunction(json)
 ```
